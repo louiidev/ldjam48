@@ -3,29 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Actor))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 6;
-
-    Rigidbody2D rigidbody2D;
     Vector3 moveDirection = Vector3.zero;
 
     Transform gun;
 
-    Camera camera;
+    new Camera camera;
 
     Manager manager;
+
+    Actor actor;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
         gun = transform.Find("Gun");
         camera = Camera.main;
         manager = Manager.Instance;
+        actor = GetComponent<Actor>();
     }
 
     private void Update()
@@ -37,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move(moveDirection.normalized);
+        actor.Move(moveDirection);
         RotateTowardsMouse();
     }
 
@@ -51,13 +48,6 @@ public class PlayerController : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-    }
-
-
-    void Move(Vector3 direction)
-    {
-        // transform.position += direction * speed * Time.deltaTime;
-        rigidbody2D.velocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
