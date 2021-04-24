@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour
 
     Actor actor;
 
+    GunController gunController;
+
     // Start is called before the first frame update
     void Start()
     {
         gun = transform.Find("Gun");
+        gunController = gun.gameObject.GetComponent<GunController>();
         camera = Camera.main;
         manager = Manager.Instance;
         actor = GetComponent<Actor>();
@@ -50,9 +53,13 @@ public class PlayerController : MonoBehaviour
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
 
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Drug") {
             manager.OnPickup(other.gameObject);
+        } else if(other.gameObject.tag == "Gun")
+        {
+            gunController.PickUp(other.gameObject);
         }
     }
 }

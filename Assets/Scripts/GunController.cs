@@ -6,6 +6,9 @@ public class GunController : MonoBehaviour
 {
 
     [SerializeField]
+    GunScriptableObj gun;
+
+    [SerializeField]
     GameObject bulletPrefab;
 
     [SerializeField]
@@ -21,6 +24,8 @@ public class GunController : MonoBehaviour
 
     CameraController cameraController;
 
+    SpriteRenderer spriteRenderer;
+
 
     private void Start()
     {
@@ -28,7 +33,9 @@ public class GunController : MonoBehaviour
         {
             bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
         }
-       
+
+        spriteRenderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
+
         firePoint = transform.Find("FirePoint");
         cameraController = Camera.main.GetComponent<CameraController>();
     }
@@ -44,5 +51,13 @@ public class GunController : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, rot);
             cameraController.Shake(0.2f);
         }
+    }
+
+    public void PickUp(GameObject pickup)
+    {
+        gun = pickup.GetComponent<GunPickup>().gun;
+        Debug.Log(pickup.GetComponent<GunPickup>().gun);
+        spriteRenderer.sprite = gun.sprite;
+        Destroy(pickup);
     }
 }
