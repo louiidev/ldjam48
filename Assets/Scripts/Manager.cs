@@ -29,5 +29,12 @@ public struct SaveData
 
 public class Manager : Singleton<Manager>
 {
- 
+    public int drugLevel = 0;
+
+    public void OnPickup(GameObject item)
+    {
+        drugLevel += 1;
+        Destroy(item);
+    }
+
 }
