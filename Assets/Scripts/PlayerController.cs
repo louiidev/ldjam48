@@ -15,11 +15,17 @@ public class PlayerController : MonoBehaviour
 
     Transform gun;
 
+    Camera camera;
+
+    Manager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         gun = transform.Find("Gun");
+        camera = Camera.main;
+        manager = Manager.Instance;
     }
 
     private void Update()
@@ -38,7 +44,7 @@ public class PlayerController : MonoBehaviour
     void RotateTowardsMouse()
     {
         Vector2 mousePos = Input.mousePosition;
-        Vector3 objectPos = Camera.main.WorldToScreenPoint(gun.position);
+        Vector3 objectPos = camera.WorldToScreenPoint(gun.position);
 
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
@@ -52,5 +58,11 @@ public class PlayerController : MonoBehaviour
     {
         // transform.position += direction * speed * Time.deltaTime;
         rigidbody2D.velocity = direction * speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Drug") {
+            manager.OnPickup(other.gameObject);
+        }
     }
 }
