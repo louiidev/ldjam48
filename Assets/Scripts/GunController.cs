@@ -56,8 +56,8 @@ public class GunController : MonoBehaviour
     public void PickUp(GameObject pickup)
     {
         gun = pickup.GetComponent<GunPickup>().gun;
-        Debug.Log(pickup.GetComponent<GunPickup>().gun);
         spriteRenderer.sprite = gun.sprite;
+        
         Destroy(pickup);
     }
 }
