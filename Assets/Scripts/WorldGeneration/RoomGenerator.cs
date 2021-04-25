@@ -14,7 +14,9 @@ public class RoomGenerator : MonoBehaviour
     public GameObject[] roomsR;
     public GameObject[] roomsL;
 
-    public int quantityCenterRooms;
+    public GameObject[,] matrix = new GameObject[0,0];
+
+    public int quantityRooms;
     public int quantityAlternativeRooms;
     public float roomWidth;
 
@@ -27,8 +29,9 @@ public class RoomGenerator : MonoBehaviour
 
     //if the initial rooms is in scene before starts, roomsInScene = 1, if it is generate in start roomsInScene = 0
     private int totalCenterRoomsInScene = 0;
+    private int x;
+    private int y;
     private GameObject currentRoom; //current Alternative room
-    private bool isRight; //if the last currentRoom is Right
 
     void Start()
     {
@@ -37,24 +40,125 @@ public class RoomGenerator : MonoBehaviour
 
     void Generate()
     {
-        GameObject temp = new GameObject();
-
-        int rightRooms = 1;
-        int leftRooms = 1;
-        totalCenterRoomsInScene++;
-
         GameObject initialPoint = Instantiate(initialRoom, new Vector3(0, 0, 0), Quaternion.identity);
+        //matrix[x, y] = initialPoint;
+        totalCenterRoomsInScene++;
 
         if (initialPoint.GetComponent<RoomID>().roomType == RoomType.U)
         {
             currentRoom = Instantiate(roomsD[Random.Range(0, roomsD.Length)], new Vector3(0, initialPoint.transform.position.y + roomWidth * totalCenterRoomsInScene, 0), Quaternion.identity);
+            y++;
+            //matrix[x, y] = currentRoom;
             totalCenterRoomsInScene++;
         }
 
-        for (int i = 0; i < quantityCenterRooms; i++)
+        for (int i = 0; i < quantityRooms; i++)
         {
-
+            currentRoom = InstantiateNewRoom(currentRoom.GetComponent<RoomID>());
+           // matrix[x, y] = currentRoom;
         }
+    }
+
+    GameObject InstantiateNewRoom(RoomID room)
+    {
+        GameObject newRoom = new GameObject();
+        Vector2 newpos = new Vector2();
+        switch (room.roomType)
+        {
+            case RoomType.U:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.D:
+                newRoom = roomsU[Random.Range(0, roomsU.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y - roomWidth);
+                y--;
+                break;
+
+            case RoomType.R:
+                newRoom = roomsL[Random.Range(0, roomsL.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x + roomWidth, room.transform.position.y);
+                x++;
+                break;
+
+            case RoomType.L:
+                newRoom = roomsR[Random.Range(0, roomsR.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x - roomWidth, room.transform.position.y);
+                x--;
+                break;
+
+            case RoomType.RLD:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                x++;
+                break;
+
+            case RoomType.RLU:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+
+                break;
+            case RoomType.RUD:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.LUD:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.UR:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+            case RoomType.UL:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.UD:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.DR:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+            case RoomType.DL:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+
+            case RoomType.RL:
+                newRoom = roomsD[Random.Range(0, roomsD.Length)];
+                newpos = new Vector2(room.gameObject.transform.position.x, room.transform.position.y + roomWidth);
+                y++;
+
+                break;
+        }
+        
+        return Instantiate(newRoom, newpos, Quaternion.identity);
     }
 
     /*
@@ -106,4 +210,4 @@ public class RoomGenerator : MonoBehaviour
        currentRoom = Instantiate(roomsPrefabs[Random.Range(0, roomsPrefabs.Length)], position, Quaternion.identity);
     }
     */
-}
+} 

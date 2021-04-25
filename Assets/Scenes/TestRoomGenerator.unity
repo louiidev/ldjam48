@@ -186,7 +186,7 @@ MonoBehaviour:
   - {fileID: 8660192645686773136, guid: f902fb17715d41841a7887033628f15b, type: 3}
   - {fileID: 8660192645686773136, guid: 527d95f47fd36294a96bf79029b2ee2a, type: 3}
   - {fileID: 8660192645686773136, guid: 89a334e710ebfe54b97493ca63ed5874, type: 3}
-  quantityCenterRooms: 5
+  quantityRooms: 3
   quantityAlternativeRooms: 3
   roomWidth: 5
   chancesToNull: 20
