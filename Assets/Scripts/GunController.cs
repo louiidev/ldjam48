@@ -51,6 +51,16 @@ public class GunController : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, rot);
             cameraController.Shake(0.2f);
         }
+
+        var rotation = transform.rotation.eulerAngles.z;
+
+        if (rotation >= 0 && rotation <=180)
+        {
+            spriteRenderer.transform.localScale = new Vector3(1, -1, 1);
+        } else
+        {
+            spriteRenderer.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     public void PickUp(GameObject pickup)
