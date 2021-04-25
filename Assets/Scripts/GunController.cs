@@ -47,8 +47,11 @@ public class GunController : MonoBehaviour
         { 
             // Add a bit of noise(randomness) to firing of bullets
             var rot = transform.rotation;
+
             rot *= Quaternion.Euler(0, 0, Random.Range(-shotRotationRandomness, shotRotationRandomness));
-            Instantiate(bulletPrefab, firePoint.position, rot);
+            var bullet = Instantiate(bulletPrefab, firePoint.position, rot);
+            // for push back effect, ignoring bullet randomness
+            bullet.GetComponent<Bullet>().bulletDirection = transform.up;
             cameraController.Shake(0.2f);
         }
 

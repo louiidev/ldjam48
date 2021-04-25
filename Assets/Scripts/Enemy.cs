@@ -39,7 +39,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            actor.Knockback(transform.position - collision.transform.position);
+            Debug.Log(collision.GetComponent<Bullet>().bulletDirection);
+            actor.Knockback(collision.GetComponent<Bullet>().bulletDirection);
             Destroy(collision.gameObject);
             Damage();
         }
