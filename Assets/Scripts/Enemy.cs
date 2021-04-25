@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int health = 3;
 
+    [SerializeField]
+    float attackRange = 2;
+
     Manager manager;
 
     Transform player;
@@ -42,18 +45,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    bool IsInRangeOfPlayer()
     {
-        
-        if (manager.drugLevel > 0)
-        {
-            MoveTowardsPlayer();
-        }
+        return Vector2.Distance(player.position, transform.position) <= attackRange;
     }
 
-    void MoveTowardsPlayer()
+    private void FixedUpdate()
     {
-        actor.Move(player.position - transform.position);
+        var direction = manager.drugLevel > 0 && IsInRangeOfPlayer() ? MoveTowardsPlayer() : Vector2.zero;
+        actor.Move(direction);
+    }
+
+    Vector2 MoveTowardsPlayer()
+    {
+        return player.position - transform.position;
     }
 
 }

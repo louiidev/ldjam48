@@ -43,8 +43,8 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetMouseButtonDown(0) && gun != null)
+        { 
             // Add a bit of noise(randomness) to firing of bullets
             var rot = transform.rotation;
             rot *= Quaternion.Euler(0, 0, Random.Range(-shotRotationRandomness, shotRotationRandomness));

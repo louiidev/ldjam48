@@ -30,12 +30,11 @@ public class Actor : MonoBehaviour
         rigidbody2D.gravityScale = 0;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (currentKnockbackTimer > 0)
         {
-            rigidbody2D.velocity = knockbackDirection * knockBackForce;
-            currentKnockbackTimer -= Time.deltaTime;
+            currentKnockbackTimer = Mathf.Max(0, currentKnockbackTimer - Time.deltaTime);
         }
     }
 
@@ -44,6 +43,9 @@ public class Actor : MonoBehaviour
         if (currentKnockbackTimer <= 0)
         {
             rigidbody2D.velocity = direction.normalized * speed;
+        } else
+        {
+            rigidbody2D.velocity = knockbackDirection * knockBackForce;
         }
     }
 
