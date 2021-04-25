@@ -9,4 +9,5 @@ public class GunScriptableObj : ScriptableObject
     public int damageAmount = 0;
     new public string name;
     public Sprite sprite;
+    public bool isMelee;
 }
