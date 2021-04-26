@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     public Color damageColor;
     public int secondsInFire;
     public int timesTakeDamageInFire;
-    public bool isInFire;
-    private bool isTakeDamage;
+    public bool isInFire; //if take fire
+    private bool isTakeDamage; //if take damage for anything
 
     // Start is called before the first frame update
     void Start()
