@@ -4808,6 +4808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7437125044644234319}
   - component: {fileID: -8126639249743809004}
+  - component: {fileID: -2248197810987171684}
   m_Layer: 0
   m_Name: F
   m_TagString: Untagged
@@ -4896,7 +4897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestRoomPercent: 0
   quantityEnemies: 5
-  compatibleRooms: []
+  maxQuantity: 20
   enemies: []
   spawnPoints: []
   chestSpawnpoints: []
@@ -4904,7 +4905,32 @@ MonoBehaviour:
   chest: {fileID: 0}
   isChestRoom: 0
   isInAttack: 0
-  currentQuantityEnemies: 0
+--- !u!61 &-2248197810987171684
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8635729205348515439}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0288258, y: -5.4821215}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.093159, y: 19.68553}
+  m_EdgeRadius: 0
 --- !u!1001 &113927612317983676
 PrefabInstance:
   m_ObjectHideFlags: 0
