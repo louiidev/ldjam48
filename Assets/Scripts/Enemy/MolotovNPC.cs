@@ -67,6 +67,8 @@ public class MolotovNPC : MonoBehaviour
         var direction = IsInSecurityArea() ? KeepDistancePlayer() : Vector2.zero;
         actor.Move(direction);
 
+        gun.right = GetDirectionOfPlayer();
+
         if (IsInRangeOfPlayer() && !isAttack)
         {
             isAttack = true;
@@ -76,7 +78,6 @@ public class MolotovNPC : MonoBehaviour
 
     void Fire()
     {
-        gun.right = GetDirectionOfPlayer();
         GameObject obj = Instantiate(molotovPrefab, gun.position, gun.localRotation);
         obj.GetComponent<Rigidbody2D>().velocity = gun.right * bulletSpeed;
     }
