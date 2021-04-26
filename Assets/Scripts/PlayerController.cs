@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class PlayerController : MonoBehaviour
 {
+    public AudioController _AudioController;
     private Animator anim;
     private SpriteRenderer sr;
     Vector3 moveDirection = Vector3.zero;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gun = transform.Find("Gun");
@@ -99,6 +101,11 @@ public class PlayerController : MonoBehaviour
     public void StartPutFire() //call be damageAreaScript
     {
         StartCoroutine("PutFire");
+    }
+
+    public void PlayStep()
+    {
+        _AudioController.PlayFX(_AudioController.walkFX);
     }
 
     IEnumerator PutFire()

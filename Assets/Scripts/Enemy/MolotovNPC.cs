@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class MolotovNPC : MonoBehaviour
 {
+    public AudioController _AudioController;
     public RoomID enemyRoom;
     private SpriteRenderer sr;
     private Animator anim;
@@ -30,7 +31,8 @@ public class MolotovNPC : MonoBehaviour
     Actor actor;
 
     private void Start()
-    { 
+    {
+        _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         actor = GetComponent<Actor>();
         player = FindObjectOfType<PlayerController>().transform;
         sr = GetComponent<SpriteRenderer>();
@@ -148,6 +150,7 @@ public class MolotovNPC : MonoBehaviour
         yield return new WaitForSeconds(delayToFire);
         GameObject obj = Instantiate(molotovPrefab, gun.position, gun.localRotation);
         obj.GetComponent<Rigidbody2D>().velocity = gun.right * bulletSpeed;
+        _AudioController.PlayFX(_AudioController.fireFX2);
     }
 
     void Flip()
