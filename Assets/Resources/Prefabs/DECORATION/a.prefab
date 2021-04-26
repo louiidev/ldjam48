@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3790832513945478666}
   - component: {fileID: 2724711288609406043}
   - component: {fileID: 2966971184179690076}
+  - component: {fileID: -404771841528070508}
   m_Layer: 0
   m_Name: a
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +113,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8501358, y: 0.78344345}
   m_EdgeRadius: 0
+--- !u!50 &-404771841528070508
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223177077834170964}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &4397007659745395319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,10 +141,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3790832513945478666}
     m_Modifications:
+    - target: {fileID: 1106534946741647731, guid: 40011a14e50e8f34aaaaf5908528c51d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106534946741647731, guid: 40011a14e50e8f34aaaaf5908528c51d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106534946741647731, guid: 40011a14e50e8f34aaaaf5908528c51d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3504296237995600806, guid: 40011a14e50e8f34aaaaf5908528c51d,
         type: 3}
       propertyPath: m_Name
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504296237995600806, guid: 40011a14e50e8f34aaaaf5908528c51d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4513101503144087544, guid: 40011a14e50e8f34aaaaf5908528c51d,
         type: 3}
@@ -199,6 +241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1391459797534738017, guid: 3a747dd947140e849ae74d179ec603b9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2112036953134457407, guid: 3a747dd947140e849ae74d179ec603b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -253,6 +300,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259352258204819638, guid: 3a747dd947140e849ae74d179ec603b9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259352258204819638, guid: 3a747dd947140e849ae74d179ec603b9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259352258204819638, guid: 3a747dd947140e849ae74d179ec603b9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a747dd947140e849ae74d179ec603b9, type: 3}
@@ -329,10 +391,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 894944976788915065, guid: 4cbffe8897473d844a7ed9956e595f43,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1378339945410313590, guid: 4cbffe8897473d844a7ed9956e595f43,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333181455690951762, guid: 4cbffe8897473d844a7ed9956e595f43,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333181455690951762, guid: 4cbffe8897473d844a7ed9956e595f43,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333181455690951762, guid: 4cbffe8897473d844a7ed9956e595f43,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbffe8897473d844a7ed9956e595f43, type: 3}

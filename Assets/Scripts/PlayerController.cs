@@ -185,7 +185,8 @@ public class PlayerController : MonoBehaviour
         if (currentHp <= 0)
         {
             gameObject.SetActive(false);
-            //gameOver Screen
+            _AudioController.PlayFX(_AudioController.deathFX);
+            manager.ResetLevel();
         }
         else
         {
@@ -197,6 +198,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator TakeDamage()
     {
         sr.color = damageColor;
+        _AudioController.PlayFX(_AudioController.hitFX);
         yield return new WaitForSeconds(0.3f);
         if (!isInFire)
         {
