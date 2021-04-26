@@ -156,42 +156,8 @@ MonoBehaviour:
     type: 3}
   bossRoom: {fileID: 2052321988284573641, guid: 2c3cef2ffcc707d48bf43e83322a44f6,
     type: 3}
-  roomsAll:
-  - {fileID: 8660192645686773136, guid: 6c3e2a2e5c8980b419f9ae8292744b05, type: 3}
-  roomsU:
-  - {fileID: 8660192645686773136, guid: 848bc4a3913f544439937037ccedc441, type: 3}
-  - {fileID: 8660192645686773136, guid: 44a1386a9db7af544a044cd832f5ad64, type: 3}
-  - {fileID: 8660192645686773136, guid: 4987c621875ea7149b346a476d2541a3, type: 3}
-  - {fileID: 8660192645686773136, guid: 9de441f9f76663c478a4194b2d1372d1, type: 3}
-  - {fileID: 8660192645686773136, guid: eaeed3fcedc2a5c41939f70737b153c2, type: 3}
-  - {fileID: 8660192645686773136, guid: 527d95f47fd36294a96bf79029b2ee2a, type: 3}
-  roomsD:
-  - {fileID: 8660192645686773136, guid: 8de7a5e5da9ea5941a984651b2d609c5, type: 3}
-  - {fileID: 8660192645686773136, guid: f7379ca3a6d49764ea594600ef94cae2, type: 3}
-  - {fileID: 8660192645686773136, guid: 848bc4a3913f544439937037ccedc441, type: 3}
-  - {fileID: 8660192645686773136, guid: 527d95f47fd36294a96bf79029b2ee2a, type: 3}
-  - {fileID: 8660192645686773136, guid: 89a334e710ebfe54b97493ca63ed5874, type: 3}
-  - {fileID: 8660192645686773136, guid: dc9848b2a270a1b4f88020fef23cb52a, type: 3}
-  roomsR:
-  - {fileID: 8660192645686773136, guid: 8de7a5e5da9ea5941a984651b2d609c5, type: 3}
-  - {fileID: 8660192645686773136, guid: de3ad78d337cbe74c843a5902d4f8d07, type: 3}
-  - {fileID: 8660192645686773136, guid: f7379ca3a6d49764ea594600ef94cae2, type: 3}
-  - {fileID: 8660192645686773136, guid: 848bc4a3913f544439937037ccedc441, type: 3}
-  - {fileID: 8660192645686773136, guid: 44a1386a9db7af544a044cd832f5ad64, type: 3}
-  - {fileID: 8660192645686773136, guid: 9de441f9f76663c478a4194b2d1372d1, type: 3}
-  roomsL:
-  - {fileID: 8660192645686773136, guid: 8de7a5e5da9ea5941a984651b2d609c5, type: 3}
-  - {fileID: 8660192645686773136, guid: 9de441f9f76663c478a4194b2d1372d1, type: 3}
-  - {fileID: 8660192645686773136, guid: eaeed3fcedc2a5c41939f70737b153c2, type: 3}
-  - {fileID: 8660192645686773136, guid: f902fb17715d41841a7887033628f15b, type: 3}
-  - {fileID: 8660192645686773136, guid: 527d95f47fd36294a96bf79029b2ee2a, type: 3}
-  - {fileID: 8660192645686773136, guid: 89a334e710ebfe54b97493ca63ed5874, type: 3}
-  quantityRooms: 3
-  quantityAlternativeRooms: 3
+  maxQuantityRooms: 0
   roomWidth: 5
-  chancesToNull: 20
-  chancesToRight: 50
-  bossSpawnInTopCenter: 50
 --- !u!4 &978328143
 Transform:
   m_ObjectHideFlags: 0
@@ -201,89 +167,6 @@ Transform:
   m_GameObject: {fileID: 978328141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1406596175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1406596178}
-  - component: {fileID: 1406596177}
-  - component: {fileID: 1406596176}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1406596176
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406596175}
-  m_Enabled: 1
---- !u!20 &1406596177
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406596175}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1406596178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406596175}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
