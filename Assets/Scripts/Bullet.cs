@@ -27,4 +27,17 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

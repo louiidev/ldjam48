@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     Vector3 moveDirection = Vector3.zero;
     public int maxHp = 20;
-    private int currentHp;
+    public int currentHp;
     public int heartHp;
     Transform gun;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Manager manager;
 
     Actor actor;
-
+    public GameObject ballPrefab;
     GunController gunController;
     public Color damageFireColor;
     public Color damageColor;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         camera = Camera.main;
         manager = FindObjectOfType(typeof(Manager)) as Manager;
         actor = GetComponent<Actor>();
-
+        manager.player = this;
         currentHp = maxHp;
     }
 
