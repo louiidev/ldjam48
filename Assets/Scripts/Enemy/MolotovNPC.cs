@@ -76,10 +76,9 @@ public class MolotovNPC : MonoBehaviour
 
     void Fire()
     {
-        gun.localRotation = Quaternion.LookRotation(GetDirectionOfPlayer());
-        GameObject obj = Instantiate(molotovPrefab, gun.position, Quaternion.identity);
-        obj.transform.right = GetDirectionOfPlayer();
-        obj.transform.position = Vector3.MoveTowards(obj.transform.position, player.transform.position, bulletSpeed * Time.deltaTime);
+        gun.right = GetDirectionOfPlayer();
+        GameObject obj = Instantiate(molotovPrefab, gun.position, gun.localRotation);
+        obj.GetComponent<Rigidbody2D>().velocity = gun.right * bulletSpeed;
     }
 
     IEnumerator ThrowMolotov()
@@ -96,7 +95,7 @@ public class MolotovNPC : MonoBehaviour
 
     Vector2 GetDirectionOfPlayer()
     {
-        return player.position - gun.position;
+        return player.position - transform.position;
     }
 
 }

@@ -9,8 +9,11 @@ public class Molotov : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Enemy") { return; }
-       GameObject mObj = Instantiate(damageArea, transform.position, Quaternion.identity);
-        mObj.GetComponent<DamageArea>().timeInFire = timeInFireActive;
+       if(col.gameObject.tag == "Player" || col.gameObject.tag == "Wall")
+       {
+            GameObject mObj = Instantiate(damageArea, transform.position, Quaternion.identity);
+            mObj.GetComponent<DamageArea>().timeInFire = timeInFireActive;
+        }
+
     }
 }
