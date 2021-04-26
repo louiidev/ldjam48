@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         _Fade.gameObject.SetActive(true);
+        hpBar.gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -26,6 +27,11 @@ public class Manager : MonoBehaviour
         if (player != null)
         {
             UpdateUI();
+            hpBar.gameObject.transform.parent.gameObject.SetActive(true);
+        }
+        else
+        {
+            hpBar.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
     
