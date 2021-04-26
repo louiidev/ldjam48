@@ -197,6 +197,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator TakeDamage()
     {
         sr.color = damageColor;
+        _AudioController.PlayFX(_AudioController.hitFX);
         yield return new WaitForSeconds(0.3f);
         if (!isInFire)
         {

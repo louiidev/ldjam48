@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Molotov : MonoBehaviour
 {
+    private AudioController _AudioController;
     public GameObject damageArea;
     public int timeInFireActive = 4;
 
@@ -11,9 +12,11 @@ public class Molotov : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Wall")
         {
+            _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
+            _AudioController.PlayFX(_AudioController.glassFX);
             GameObject mObj = Instantiate(damageArea, transform.position, Quaternion.identity);
             mObj.GetComponent<DamageArea>().timeInFire = timeInFireActive;
-
+            _AudioController.PlayFX(_AudioController.explosionFX);
             Destroy(this.gameObject);
         }
     }

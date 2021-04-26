@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
+    public AudioController _AudioController;
     public PlayerController player;
     public Image hpBar;
     public Fade _Fade;
@@ -18,6 +19,8 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+        _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
+        _AudioController.ChangeMusic(_AudioController.music1);
         _Fade.gameObject.SetActive(true);
         hpBar.gameObject.transform.parent.gameObject.SetActive(false);
     }
@@ -43,6 +46,11 @@ public class Manager : MonoBehaviour
     public void OnPickup(GameObject item)
     {
         drugLevel += 1;
+        if (drugLevel >= 2)
+        {
+            _AudioController.ChangeMusic(_AudioController.music2);
+        }
+
         Destroy(item);
         NextScene();
     }

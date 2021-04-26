@@ -30,10 +30,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Wall")
+        switch (col.gameObject.tag)
         {
-            Destroy(this.gameObject);
+            case "Wall":
+                Destroy(this.gameObject);
+                break;
+
+            case "Destructable":
+                Destroy(col.gameObject);
+                Destroy(this.gameObject);
+                break;
         }
+
     }
 
     private void OnBecameInvisible()

@@ -10,6 +10,7 @@ TagManager:
   - Damage
   - Heart
   - Wall
+  - Destructable
   layers:
   - Default
   - TransparentFX

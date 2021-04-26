@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6149728628256347881}
   - component: {fileID: 6149728628256347886}
   - component: {fileID: 9127115235922490310}
+  - component: {fileID: 4918199302524144585}
   m_Layer: 0
   m_Name: c
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2831028, y: 0.9595568}
   m_EdgeRadius: 0
+--- !u!50 &4918199302524144585
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149728628256347887}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &2287853203163049579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +223,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6149728628256347881}
     m_Modifications:
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159767973778987394, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
       propertyPath: m_Color.b
@@ -220,6 +252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788199558307063693, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4220541723492172755, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
@@ -376,6 +413,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6149728628256347881}
     m_Modifications:
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159767973778987394, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
       propertyPath: m_Color.b
@@ -395,6 +442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788199558307063693, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4220541723492172755, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
@@ -476,6 +528,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6149728628256347881}
     m_Modifications:
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159767973778987394, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
       propertyPath: m_Color.b
@@ -495,6 +557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788199558307063693, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4220541723492172755, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
