@@ -210,7 +210,7 @@ PrefabInstance:
     - target: {fileID: 702225480787489785, guid: 6be7d37aa5d5bb74f8b448b5728bcc45,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 702225480787489787, guid: 6be7d37aa5d5bb74f8b448b5728bcc45,
         type: 3}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7688679, b: 0.88189137, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2279751802417319558, guid: a9bde8ef421117849a847e533dc27c9a,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.19
+      objectReference: {fileID: 0}
     - target: {fileID: 2279751802417319559, guid: a9bde8ef421117849a847e533dc27c9a,
         type: 3}
       propertyPath: m_RootOrder
@@ -646,7 +651,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "THANKS FOR PLAYING\nFESTA ESTRANHA\nCOM GENTE ESQUISITA\n\n\nPROGRAMMER\nCANVAS
-    DEV\n\n\nARTIST\nZAGOIRIS\n\n\nMUSIC AND SFX \nNEONAFROSLOTH\n\n\n\n"
+    DEV\n\n\nARTIST\nZAGOIRIS\n\n\nMUSIC AND SFX \nJANIFORM\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b1166e9ec8adc241b1e1a7162a7d24e, type: 2}
   m_sharedMaterial: {fileID: 5958765254271584162, guid: 8b1166e9ec8adc241b1e1a7162a7d24e,
