@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
             isRun = false;
         }
 
+        Vector3 posCam = new Vector3(transform.position.x, transform.position.y, -10);
+        camera.transform.position = posCam;
         anim.SetBool("isRun", isRun);
     }
 
