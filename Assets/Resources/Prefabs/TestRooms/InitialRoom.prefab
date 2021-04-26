@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 2438715638482341126}
   - component: {fileID: 6752905569139348962}
   - component: {fileID: 1369599494730426170}
+  - component: {fileID: -1329383785973477651}
+  - component: {fileID: 8279559239981798267}
   m_Layer: 0
   m_Name: InitialRoom
   m_TagString: Untagged
@@ -178,4 +180,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aae170146449f4f864e96fbfee8065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomType: 1
+  chestRoomPercent: 0
+  quantityEnemies: 5
+  enemies: []
+  spawnPoints: []
+  chestSpawnpoints: []
+  portals: []
+  chest: {fileID: 0}
+  isChestRoom: 0
+  isInAttack: 0
+--- !u!114 &-1329383785973477651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397874361160512377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e966103b1e0f5748bd071295ce0fd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compatibleRooms:
+  - {fileID: 8660192645686773136, guid: 6c3e2a2e5c8980b419f9ae8292744b05, type: 3}
+  - {fileID: 8660192645686773136, guid: 8de7a5e5da9ea5941a984651b2d609c5, type: 3}
+  - {fileID: 8660192645686773136, guid: 848bc4a3913f544439937037ccedc441, type: 3}
+  - {fileID: 8660192645686773136, guid: 527d95f47fd36294a96bf79029b2ee2a, type: 3}
+--- !u!114 &8279559239981798267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397874361160512377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e966103b1e0f5748bd071295ce0fd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compatibleRooms: []

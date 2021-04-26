@@ -6,35 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
-    Transform buttonContainer;
-    Button startButton;
-    Button loadButton;
-    Button options;
-
-    private void Start()
+    private Manager _Manager;
+    public void Start()
     {
-        var canInteractLoadBtn = Serialisation.HasCurrentSave();
-        buttonContainer = transform.Find("ButtonContainer");
-        startButton = buttonContainer.Find("Start").GetComponent<Button>();
-        loadButton = buttonContainer.Find("Load").GetComponent<Button>();
-        options = buttonContainer.Find("Options").GetComponent<Button>();
-
-        loadButton.interactable = canInteractLoadBtn;
-        startButton.onClick.AddListener(OnStart);
-        loadButton.onClick.AddListener(OnLoad);
+        _Manager = Manager.Instance;
     }
 
-
-
-    void OnStart()
+    public void StartGame()
     {
-        Serialisation.ClearSave();
-        SceneManager.LoadScene("");
+        _Manager.NextScene();
     }
 
-    void OnLoad()
+    public void Quit()
     {
-        Serialisation.Load();
+        Application.Quit();
     }
 }
