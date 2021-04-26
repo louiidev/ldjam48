@@ -23,14 +23,14 @@ public class RoomGenerator : MonoBehaviour
     void Generate()
     {
         GameObject initialObj = Instantiate(initialRoom, Vector3.zero, Quaternion.identity);
-        newRoom = initialObj.GetComponent<RoomID>().GetNextRoom();
+        newRoom = initialObj.GetComponent<RoomGroup>().GetNextRoom();
         quantityRooms++;
 
         for (int i = 0; i <= maxQuantityRooms; i++)
         {
             nextPos = new Vector3(initialObj.transform.position.x, initialObj.transform.position.y + roomWidth * quantityRooms);
             currentRoom = Instantiate(newRoom, nextPos, Quaternion.identity);
-            newRoom = currentRoom.GetComponent<RoomID>().GetNextRoom();
+            newRoom = currentRoom.GetComponent<RoomGroup>().GetNextRoom();
             quantityRooms++;
         }
 

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static readonly System.Lazy<T> LazyInstance = new System.Lazy<T>(CreateSingleton);
@@ -29,7 +27,18 @@ public struct SaveData
 
 public class Manager : Singleton<Manager>
 {
+    public Fade _Fade;
     public int drugLevel = 0;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        _Fade.gameObject.SetActive(true);
+    }
 
     public void OnPickup(GameObject item)
     {
@@ -37,4 +46,15 @@ public class Manager : Singleton<Manager>
         Destroy(item);
     }
 
+    public void NextScene()
+    {
+        StartCoroutine("DelayNextScene");   
+    }
+
+    IEnumerator DelayNextScene()
+    {
+        _Fade.FadeIn();
+        yield return new WaitUntil(() => _Fade.isFadeCompleted);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
 }

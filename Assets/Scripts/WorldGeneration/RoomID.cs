@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class RoomID : MonoBehaviour
 {
+    private Manager _Manager;
     public int chestRoomPercent = 0;
     public int quantityEnemies = 5;
-    public GameObject[] compatibleRooms;
+    public int maxQuantity = 20;
     public GameObject[] enemies;
     public Transform[] spawnPoints;
     public Transform[] chestSpawnpoints;
@@ -14,10 +15,21 @@ public class RoomID : MonoBehaviour
     public GameObject chest;
     public bool isChestRoom;
     public bool isInAttack;
-    public int currentQuantityEnemies;
 
     private void Start()
     {
+        _Manager = Manager.Instance;
+        int druglevel = _Manager.drugLevel;
+
+        if (druglevel > 0)
+        {
+            quantityEnemies *= 1 + (druglevel / 2);
+            if(quantityEnemies >= maxQuantity)
+            {
+                quantityEnemies = maxQuantity;
+            }
+        }
+
         SpawnEnemies();
     }
 
@@ -62,12 +74,5 @@ public class RoomID : MonoBehaviour
                 enemy.GetComponent<MolotovNPC>().isReady = true;
             }
         }
-    }
-
-    public GameObject GetNextRoom()
-    {
-        int rand = Random.Range(0, compatibleRooms.Length);
-        print(compatibleRooms.Length);
-        return compatibleRooms[rand];
     }
 }
