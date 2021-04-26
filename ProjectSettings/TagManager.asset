@@ -7,6 +7,8 @@ TagManager:
   - Drug
   - Bullet
   - Gun
+  - Damage
+  - Heart
   layers:
   - Default
   - TransparentFX

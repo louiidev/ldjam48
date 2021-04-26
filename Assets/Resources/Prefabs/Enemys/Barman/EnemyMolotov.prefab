@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170d7216943a63b43b8522c81141aaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   startKnockbackTimer: 0.4
   knockBackForce: 1.2
 --- !u!114 &6497540792417433997
@@ -245,9 +245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   molotovPrefab: {fileID: 8144799802255983399, guid: 5cbd8d3748551e44e8a84ff453951be5,
     type: 3}
+  drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}
   gun: {fileID: 6206478116820761859}
   health: 5
   attackRange: 7.4
+  dropPercent: 15
   distanceToRun: 3
   bulletSpeed: 6
   timeToThrow: 4

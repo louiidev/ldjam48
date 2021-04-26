@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    private PlayerController _Player;
     public Transform portalOut;
 
     private void OnTriggerEnter2D(Collider2D other)
