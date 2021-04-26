@@ -182,18 +182,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f186ebe235d23346bf7d9bc71808d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AudioController: {fileID: 0}
+  enemyRoom: {fileID: 0}
   molotovPrefab: {fileID: 4944987758262133997, guid: de8d6d5430d6ea44886be2405bcf482d,
     type: 3}
   drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}
   gun: {fileID: 4517779042802690934}
   health: 3
-  attackRange: 7.5
+  attackRange: 5
   dropPercent: 15
-  distanceToRun: 2
+  distanceToRun: 2.24
+  distanceView: 7
   bulletSpeed: 10
   timeToThrow: 2
   delayToFire: 0.23
   isLookLeft: 0
+  isReady: 0
 --- !u!1 &4517779042802690937
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     Vector3 moveDirection = Vector3.zero;
-    public int maxHp = 20;
+    public int maxHp = 50;
     public int currentHp;
     public int heartHp;
     Transform gun;
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHp = maxHp;
         _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -45,7 +46,6 @@ public class PlayerController : MonoBehaviour
         manager = FindObjectOfType(typeof(Manager)) as Manager;
         actor = GetComponent<Actor>();
         manager.player = this;
-        currentHp = maxHp;
     }
 
     private void Update()

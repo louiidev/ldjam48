@@ -249,15 +249,16 @@ MonoBehaviour:
   molotovPrefab: {fileID: 8144799802255983399, guid: 5cbd8d3748551e44e8a84ff453951be5,
     type: 3}
   drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}
-  gun: {fileID: 6206478116820761859}
+  gun: {fileID: 6206478116820761859, guid: dfd6704b85c5809418f687daeb6b720b, type: 3}
   health: 5
-  attackRange: 7.4
+  attackRange: 5
   dropPercent: 15
-  distanceToRun: 3
+  distanceToRun: 2
+  distanceView: 6
   bulletSpeed: 6
   timeToThrow: 4
   delayToFire: 0.2
-  isLookLeft: 0
+  isLookLeft: 1
   isReady: 0
 --- !u!95 &4573355317216217092
 Animator:

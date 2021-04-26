@@ -204,6 +204,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6788019717489187892, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
         type: 3}
+      propertyPath: maxHp
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788019717489187892, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
       propertyPath: damageColor.b
       value: 0
       objectReference: {fileID: 0}

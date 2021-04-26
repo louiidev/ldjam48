@@ -187,7 +187,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.16, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -251,13 +251,14 @@ MonoBehaviour:
   drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}
   gun: {fileID: 6206478116820761859}
   health: 5
-  attackRange: 7.4
+  attackRange: 5.5
   dropPercent: 15
-  distanceToRun: 3
+  distanceToRun: 2
+  distanceView: 6
   bulletSpeed: 6
-  timeToThrow: 4
+  timeToThrow: 3.6
   delayToFire: 0.2
-  isLookLeft: 0
+  isLookLeft: 1
   isReady: 0
 --- !u!95 &4573355317216217092
 Animator:
