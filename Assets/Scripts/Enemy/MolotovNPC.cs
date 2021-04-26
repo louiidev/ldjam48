@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class MolotovNPC : MonoBehaviour
 {
+    public RoomID enemyRoom;
     private SpriteRenderer sr;
     private Animator anim;
     public GameObject molotovPrefab;
@@ -20,6 +21,7 @@ public class MolotovNPC : MonoBehaviour
     public float timeToThrow;
     public float delayToFire = 0.2f;
     public bool isLookLeft;
+    public bool isReady = false;
     private bool isAttack;
     private bool isWalk;
     Transform player;
@@ -48,8 +50,14 @@ public class MolotovNPC : MonoBehaviour
                 Instantiate(drop, transform.position, Quaternion.identity);
             }
 
-            Destroy(gameObject);
+            Death();
         }
+    }
+
+    void Death()
+    {
+        enemyRoom.quantityEnemies--;
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
@@ -81,43 +89,47 @@ public class MolotovNPC : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsInSecurityArea())
-        {
-            direction = KeepDistancePlayer();
-        }
-        else if (!IsInRangeOfPlayer())
-        {
-            direction = GetDirectionOfPlayer();
-        }
+        if(isReady == false) { return; }
         else
         {
-            direction = Vector2.zero;
-        }
+            if (IsInSecurityArea())
+            {
+                direction = KeepDistancePlayer();
+            }
+            else if (!IsInRangeOfPlayer())
+            {
+                direction = GetDirectionOfPlayer();
+            }
+            else
+            {
+                direction = Vector2.zero;
+            }
 
-        if (!isLookLeft && GetDirectionOfPlayer().x < 0)
-        {
-            Flip();
-        }
-        else if (isLookLeft && GetDirectionOfPlayer().x > 0)
-        {
-            Flip();
-        }
+            if (!isLookLeft && GetDirectionOfPlayer().x < 0)
+            {
+                Flip();
+            }
+            else if (isLookLeft && GetDirectionOfPlayer().x > 0)
+            {
+                Flip();
+            }
 
-        actor.Move(direction);
+            actor.Move(direction);
 
-        gun.right = GetDirectionOfPlayer();
+            gun.right = GetDirectionOfPlayer();
 
-        if (IsInRangeOfPlayer() && !isAttack)
-        {
-            isAttack = true;
-            StartCoroutine("ThrowMolotov");
-        }
+            if (IsInRangeOfPlayer() && !isAttack)
+            {
+                isAttack = true;
+                StartCoroutine("ThrowMolotov");
+            }
 
-        isWalk = direction != Vector2.zero;
+            isWalk = direction != Vector2.zero;
 
-        if (anim != null)
-        {
-            anim.SetBool("isWalk", isWalk);
+            if (anim != null)
+            {
+                anim.SetBool("isWalk", isWalk);
+            }
         }
     }
 
