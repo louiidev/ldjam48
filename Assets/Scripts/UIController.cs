@@ -10,12 +10,6 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = Manager.Instance;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        manager = FindObjectOfType(typeof(Manager)) as Manager;
     }
 }

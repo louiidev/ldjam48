@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        manager = Manager.Instance;
+        manager = FindObjectOfType(typeof(Manager)) as Manager;
         actor = GetComponent<Actor>();
         player = FindObjectOfType<PlayerController>().transform;
     }

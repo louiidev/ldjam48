@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         gun = transform.Find("Gun");
         gunController = gun.gameObject.GetComponent<GunController>();
         camera = Camera.main;
-        manager = Manager.Instance;
+        manager = FindObjectOfType(typeof(Manager)) as Manager;
         actor = GetComponent<Actor>();
 
         currentHp = maxHp;

@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e966103b1e0f5748bd071295ce0fd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compatibleRooms: []
+  compatibleRooms:
+  - {fileID: 4728522281061524227, guid: 82f3cd74fee3c96439d0a26fe96c4024, type: 3}
+  - {fileID: 2675189925844681852, guid: 36c9cb8c800330d468ee33ed414db55c, type: 3}
+  - {fileID: 6972885890334128933, guid: 5d6d30aececf54042828ec9edf81f16e, type: 3}
+  - {fileID: 819864697205646328, guid: 2b6631c4f2529d6428535512fdb66c6a, type: 3}
 --- !u!1001 &378358957669978750
 PrefabInstance:
   m_ObjectHideFlags: 0

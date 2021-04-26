@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     private Manager _Manager;
     public void Start()
     {
-        _Manager = Manager.Instance;
+        _Manager = FindObjectOfType(typeof(Manager)) as Manager;
     }
 
     public void StartGame()

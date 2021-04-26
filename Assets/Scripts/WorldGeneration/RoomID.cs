@@ -18,7 +18,7 @@ public class RoomID : MonoBehaviour
 
     private void Start()
     {
-        _Manager = Manager.Instance;
+        _Manager = FindObjectOfType(typeof(Manager)) as Manager;
         int druglevel = _Manager.drugLevel;
 
         if (druglevel > 0)

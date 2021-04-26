@@ -45,7 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e966103b1e0f5748bd071295ce0fd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compatibleRooms: []
+  compatibleRooms:
+  - {fileID: 8950947128145373405, guid: 2664b21ca0ca4ee44932c003716c46a6, type: 3}
+  - {fileID: 343192315930011211, guid: 59ff4826cf6b4c34cb48b4eb2a7b075a, type: 3}
+  - {fileID: 5604479002294286509, guid: 16841c5fd53c4b34587b535f9aec669c, type: 3}
+  - {fileID: 8338337326527683087, guid: 2b9edea52d101a04f9907a160c99f034, type: 3}
+  - {fileID: 7186774219650699528, guid: f66b49dea5fe18b4eaa5262c7d4508ba, type: 3}
+  - {fileID: 3050159948165855536, guid: b526dcb807f82ba4495becab2dea3098, type: 3}
 --- !u!1001 &172906001291606898
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using Newtonsoft.Json.Bson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-
+/*
 public struct SerialisationData
 {
     public SaveData data;
@@ -54,3 +54,4 @@ public static class Serialisation
         return System.IO.File.Exists(path);
     }
 }
+*/
