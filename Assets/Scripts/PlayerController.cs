@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     Actor actor;
 
     GunController gunController;
+    public Color damageColor;
+    public int secondsInFire;
+    public int timesTakeDamageInFire;
+    public bool isInFire;
+    private bool isTakeDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -53,11 +58,32 @@ public class PlayerController : MonoBehaviour
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
 
+    public void StartPutFire() //call be damageAreaScript
+    {
+        StartCoroutine("PutFire");
+    }
+
+    IEnumerator PutFire()
+    {
+        if (!isInFire)
+        {
+            isInFire = true;
+
+            for (int i = 0; i <= timesTakeDamageInFire; i++)
+            {
+                print("FIREE");
+                yield return new WaitForSeconds(secondsInFire);
+            }
+        }
+        isInFire = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Drug") {
+        if (other.gameObject.tag == "Drug")
+        {
             manager.OnPickup(other.gameObject);
-        } else if(other.gameObject.tag == "Gun")
+        }
+        else if (other.gameObject.tag == "Gun")
         {
             gunController.PickUp(other.gameObject);
         }

@@ -43,7 +43,8 @@ public class Actor : MonoBehaviour
         if (currentKnockbackTimer <= 0)
         {
             rigidbody2D.velocity = direction.normalized * speed;
-        } else
+        } 
+        else
         {
             rigidbody2D.velocity = knockbackDirection * knockBackForce;
         }
