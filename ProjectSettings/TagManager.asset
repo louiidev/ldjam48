@@ -9,6 +9,7 @@ TagManager:
   - Gun
   - Damage
   - Heart
+  - Wall
   layers:
   - Default
   - TransparentFX
