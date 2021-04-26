@@ -6,7 +6,7 @@ public class AudioController : MonoBehaviour
 {
     public AudioSource music, fx;
     public AudioClip music1, music2;
-    public AudioClip walkFX, hitFX, fireFX, fireFX2, glassFX, explosionFX;
+    public AudioClip walkFX, hitFX, fireFX, fireFX2, glassFX, explosionFX, deathFX;
 
     public void ChangeMusic(AudioClip clip)
     {

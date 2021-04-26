@@ -185,7 +185,8 @@ public class PlayerController : MonoBehaviour
         if (currentHp <= 0)
         {
             gameObject.SetActive(false);
-            //gameOver Screen
+            _AudioController.PlayFX(_AudioController.deathFX);
+            manager.ResetLevel();
         }
         else
         {
