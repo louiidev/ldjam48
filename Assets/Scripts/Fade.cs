@@ -21,4 +21,9 @@ public class Fade : MonoBehaviour
     {
         anim.SetTrigger("fadeIn");
     }
+
+    public void FadeOut()
+    {
+        anim.SetTrigger("fadeOut");
+    }
 }

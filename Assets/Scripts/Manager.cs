@@ -75,6 +75,7 @@ public class Manager : MonoBehaviour
         _Fade.FadeIn();
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        _Fade.FadeOut();
     }
 
     IEnumerator DelayResetScene()
@@ -82,5 +83,6 @@ public class Manager : MonoBehaviour
         _Fade.FadeIn();
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _Fade.FadeOut();
     }
 }
