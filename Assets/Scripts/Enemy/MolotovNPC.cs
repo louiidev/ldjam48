@@ -15,7 +15,7 @@ public class MolotovNPC : MonoBehaviour
     int health = 3;
     [SerializeField]
     float attackRange = 5;
-    public float dropPercent = 15;
+    public float dropPercent = 25;
     public float distanceToRun = 2;
     public float bulletSpeed;
     public float timeToThrow;
