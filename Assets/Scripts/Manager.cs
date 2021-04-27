@@ -76,6 +76,11 @@ public class Manager : MonoBehaviour
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         _Fade.FadeOut();
+
+        if(player == null)
+        {
+            player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
+        }
     }
 
     IEnumerator DelayResetScene()
@@ -84,5 +89,10 @@ public class Manager : MonoBehaviour
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         _Fade.FadeOut();
+
+        if (player == null)
+        {
+            player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
+        }
     }
 }

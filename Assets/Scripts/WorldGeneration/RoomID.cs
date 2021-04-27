@@ -33,19 +33,6 @@ public class RoomID : MonoBehaviour
         SpawnEnemies();
     }
 
-    private void Update()
-    {
-        if (!isChestRoom && quantityEnemies <= 0 && isInAttack)
-        {
-            isInAttack = false;
-
-            for (int i = 0; i < portals.Count; i++)
-            {
-                portals[i].gameObject.SetActive(true);
-            }
-        }
-    }
-
     void SpawnEnemies()
     {
         for(int i = 0; i < quantityEnemies; i++)
@@ -54,24 +41,6 @@ public class RoomID : MonoBehaviour
             {
                 GameObject temp = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPoints[Random.Range(0, spawnPoints.Length
                     )].position, Quaternion.identity);
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isInAttack = true;
-
-            for(int i = 0; i < portals.Count; i++)
-            {
-                portals[i].gameObject.SetActive(false);
-            }
-
-            foreach (GameObject enemy in enemies)
-            {
-                enemy.GetComponent<MolotovNPC>().isReady = true;
             }
         }
     }

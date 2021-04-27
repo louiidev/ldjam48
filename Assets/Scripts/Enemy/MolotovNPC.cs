@@ -6,7 +6,6 @@ using UnityEngine;
 public class MolotovNPC : MonoBehaviour
 {
     public AudioController _AudioController;
-    public RoomID enemyRoom;
     private SpriteRenderer sr;
     private Animator anim;
     public GameObject molotovPrefab;
@@ -16,7 +15,7 @@ public class MolotovNPC : MonoBehaviour
     int health = 3;
     [SerializeField]
     float attackRange = 5;
-    public float dropPercent = 25;
+    public float dropPercent = 15;
     public float distanceToRun = 2;
     public float distanceView = 6;
     public float bulletSpeed;
@@ -53,15 +52,10 @@ public class MolotovNPC : MonoBehaviour
                 Instantiate(drop, transform.position, Quaternion.identity);
             }
 
-            Death();
+            Destroy(this.gameObject);
         }
     }
 
-    void Death()
-    {
-        enemyRoom.quantityEnemies--;
-        Destroy(gameObject);
-    }
 
     private void OnDrawGizmos()
     {
