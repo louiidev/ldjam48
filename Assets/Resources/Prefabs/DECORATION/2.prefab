@@ -121,7 +121,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3766796532254333588}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -291,6 +291,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3766796532254333590}
     m_Modifications:
+    - target: {fileID: 2695067143808635435, guid: 2eb87f9e48a76a14bb95cac536379e45,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159767973778987394, guid: 2eb87f9e48a76a14bb95cac536379e45,
         type: 3}
       propertyPath: m_Color.b

@@ -121,7 +121,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7788862506663937074}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -201,6 +201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9206975579310062120, guid: c93920780f530aa468a3f1803b9873fc,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c93920780f530aa468a3f1803b9873fc, type: 3}
 --- !u!4 &7068287558794971598 stripped
@@ -216,6 +221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7068287558341910636}
     m_Modifications:
+    - target: {fileID: -8527002127164151783, guid: d7f0f0239c01fe540b0f631447ee38a5,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3766796532254333588, guid: d7f0f0239c01fe540b0f631447ee38a5,
         type: 3}
       propertyPath: m_Name
@@ -350,6 +360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453328717012659299, guid: ee8fbb314c1447a4ba643334c56a77fb,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8fbb314c1447a4ba643334c56a77fb, type: 3}
