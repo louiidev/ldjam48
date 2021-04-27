@@ -217,7 +217,6 @@ public class PlayerController : MonoBehaviour
     void Flip()
     {
         isLookLeft = !isLookLeft;
-        float x = transform.localScale.x;
-        transform.localScale = new Vector3(x * -1, transform.localScale.y, transform.localScale.z);
+        sr.flipX = !sr.flipX;
     }
 }

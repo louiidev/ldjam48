@@ -202,6 +202,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6788019716021078536, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb89a00d9ac9cb94085ddc564b4e135b,
+        type: 3}
+    - target: {fileID: 6788019716021078536, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788019717049144229, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788019717138145955, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788019717138145955, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.97
+      objectReference: {fileID: 0}
     - target: {fileID: 6788019717489187892, guid: 76f248f4cf74e5e4fa3a61758874ff7f,
         type: 3}
       propertyPath: maxHp
