@@ -379,15 +379,15 @@ RectTransform:
   m_GameObject: {fileID: 220374146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 411304330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 309}
-  m_SizeDelta: {x: -410, y: 154.23}
+  m_AnchoredPosition: {x: -393.33237, y: 323.5}
+  m_SizeDelta: {x: -803.06476, y: 154.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220374148
 MonoBehaviour:
@@ -437,11 +437,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 91.8
+  m_fontSize: 73.94
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 91.8
+  m_fontSizeMin: 73.94
   m_fontSizeMax: 999
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -129.20946, y: 0, z: -115.24097, w: 2.5121038}
+  m_margin: {x: 12.73686, y: 0, z: 10.933582, w: 2.5121038}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1082,15 +1082,15 @@ RectTransform:
   m_GameObject: {fileID: 953695418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 411304330}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 63}
-  m_SizeDelta: {x: -410, y: 154.23}
+  m_AnchoredPosition: {x: -393.3325, y: 93.4}
+  m_SizeDelta: {x: -803.065, y: 154.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953695420
 MonoBehaviour:
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FESTA ESTRANHA COM GENTE ESQUISITA
+  m_text: "FESTA ESTRANHA \nCOM GENTE ESQUISITA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b1166e9ec8adc241b1e1a7162a7d24e, type: 2}
   m_sharedMaterial: {fileID: 5958765254271584162, guid: 8b1166e9ec8adc241b1e1a7162a7d24e,
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -178.09973, y: 0, z: -181.5919, w: 2.5121038}
+  m_margin: {x: 11.162159, y: 0, z: 23.441673, w: 2.5121038}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1216,7 +1216,7 @@ RectTransform:
   m_GameObject: {fileID: 999640890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 488677797}
   - {fileID: 1640248788}
@@ -1226,7 +1226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 475, y: -258}
+  m_AnchoredPosition: {x: 475, y: 0}
   m_SizeDelta: {x: 796.98, y: 557.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999640892
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 1176103851}
   - component: {fileID: 1176103850}
   m_Layer: 5
-  m_Name: Festa estranha  (2)
+  m_Name: controles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -192}
+  m_AnchoredPosition: {x: 63, y: -169.7}
   m_SizeDelta: {x: -410, y: 154.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176103850
@@ -1449,7 +1449,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'CONTROLS:
 
-    WASD - MOVE
+    W A S D - MOVE
 
     MOUSE - AIM
 
@@ -1818,6 +1818,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 702225480787489786, guid: 6be7d37aa5d5bb74f8b448b5728bcc45,
+        type: 3}
+      propertyPath: weight
+      value: 0.551
+      objectReference: {fileID: 0}
     - target: {fileID: 702225480787489787, guid: 6be7d37aa5d5bb74f8b448b5728bcc45,
         type: 3}
       propertyPath: m_RootOrder
@@ -1887,10 +1892,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: EfeitosCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 7798667038993773625, guid: e152e0bfe0de55845b5ebd477942b405,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.53
+      objectReference: {fileID: 0}
     - target: {fileID: 7798667038993773627, guid: e152e0bfe0de55845b5ebd477942b405,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.95
+      value: 10.15
       objectReference: {fileID: 0}
     - target: {fileID: 7798667039013171577, guid: e152e0bfe0de55845b5ebd477942b405,
         type: 3}
@@ -1902,6 +1912,11 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 63
       objectReference: {fileID: 0}
+    - target: {fileID: 7798667039013171577, guid: e152e0bfe0de55845b5ebd477942b405,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7798667039013171579, guid: e152e0bfe0de55845b5ebd477942b405,
         type: 3}
       propertyPath: prewarm
@@ -1910,7 +1925,7 @@ PrefabInstance:
     - target: {fileID: 7798667039013171579, guid: e152e0bfe0de55845b5ebd477942b405,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 20.8
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 7798667039013171579, guid: e152e0bfe0de55845b5ebd477942b405,
         type: 3}
