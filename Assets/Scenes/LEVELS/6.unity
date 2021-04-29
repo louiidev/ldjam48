@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be7d37aa5d5bb74f8b448b5728bcc45, type: 3}
---- !u!1 &782175710
+--- !u!1 &847851040
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,58 +277,78 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 782175711}
-  - component: {fileID: 782175713}
-  - component: {fileID: 782175712}
+  - component: {fileID: 847851041}
+  - component: {fileID: 847851044}
+  - component: {fileID: 847851043}
+  - component: {fileID: 847851042}
   m_Layer: 5
-  m_Name: Image
+  m_Name: fundo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &782175711
+--- !u!224 &847851041
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782175710}
+  m_GameObject: {fileID: 847851040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1192500744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.113, y: -306.172}
-  m_SizeDelta: {x: 2072.649, y: 1788.393}
+  m_AnchoredPosition: {x: 0, y: -395.2}
+  m_SizeDelta: {x: 1562.5, y: 1562.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &782175712
+--- !u!95 &847851042
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847851040}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c64ef14baf3a78349b3eb64dafa85835, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &847851043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782175710}
+  m_GameObject: {fileID: 847851040}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7688679, b: 0.88189137, a: 1}
+  m_Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f1f5dd9003a16741b403778f70a630d, type: 3}
-  m_Type: 2
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: e7f8f5c25c347e84eb15636c3e9cd454, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -336,13 +356,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &782175713
+--- !u!222 &847851044
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782175710}
+  m_GameObject: {fileID: 847851040}
   m_CullTransparentMesh: 1
 --- !u!1001 &1110880897
 PrefabInstance:
@@ -509,7 +529,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 782175711}
+  - {fileID: 847851041}
   - {fileID: 1853052086}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -628,8 +648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 24.4}
+  m_SizeDelta: {x: 1244.772, y: 59.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853052087
 MonoBehaviour:
@@ -651,9 +671,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THANKS FOR PLAYING\nLUNA IN THE SKY\nWITH DIAMONDS \n-\nFESTA ESTRANHA\nCOM
-    GENTE ESQUISITA\n\n\nPROGRAMMER\nCANVAS DEV\n\nARTIST\nZAGOIRIS\n\nMUSIC AND
-    SFX \nJANIFORM\n\n\n\n\n\nALT + F4"
+  m_text: "ZENTROPY GAMES\n\nTHANKS FOR PLAYING\nLUNA IN THE SKY WITH DIAMONDS \n-\nFESTA
+    ESTRANHA COM GENTE ESQUISITA\n\n\nPROGRAMMER\nCANVAS DEV\n\nARTIST\nZAGOIRIS\n\nMUSIC
+    AND SFX \nJANIFORM\n\n\nALT + F4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b1166e9ec8adc241b1e1a7162a7d24e, type: 2}
   m_sharedMaterial: {fileID: 5958765254271584162, guid: 8b1166e9ec8adc241b1e1a7162a7d24e,
@@ -663,8 +683,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -681,8 +701,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 37.74
+  m_fontSizeBase: 37.74
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -717,7 +737,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -198.02591, y: 0, z: -236.9541, w: 0}
+  m_margin: {x: 3.849432, y: 0, z: 4.1746426, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
