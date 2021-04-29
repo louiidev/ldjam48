@@ -135,6 +135,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1729847661491714307, guid: 38f1c0c3afe1ca54e87a422546ced4ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729847661491714307, guid: 38f1c0c3afe1ca54e87a422546ced4ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.81
+      objectReference: {fileID: 0}
     - target: {fileID: 5495269033832751156, guid: 38f1c0c3afe1ca54e87a422546ced4ae,
         type: 3}
       propertyPath: m_Name
@@ -704,6 +714,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8430941678445972282, guid: a4587057c22cb674fb6dff85688fe9e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430941678445972282, guid: a4587057c22cb674fb6dff85688fe9e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4587057c22cb674fb6dff85688fe9e2, type: 3}
 --- !u!1001 &1192015351
@@ -1003,17 +1023,17 @@ PrefabInstance:
     - target: {fileID: 7042732855078415466, guid: 69ef7de0a27c4d141b2e9d39f858c87b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7042732855078415466, guid: 69ef7de0a27c4d141b2e9d39f858c87b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1880283
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7042732855078415466, guid: 69ef7de0a27c4d141b2e9d39f858c87b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.56794
+      value: 18.06
       objectReference: {fileID: 0}
     - target: {fileID: 7042732855078415466, guid: 69ef7de0a27c4d141b2e9d39f858c87b,
         type: 3}

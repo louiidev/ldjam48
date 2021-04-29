@@ -673,7 +673,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "ZENTROPY GAMES\n\nTHANKS FOR PLAYING\nLUNA IN THE SKY WITH DIAMONDS \n-\nFESTA
     ESTRANHA COM GENTE ESQUISITA\n\n\nPROGRAMMER\nCANVAS DEV\n\nARTIST\nZAGOIRIS\n\nMUSIC
-    AND SFX \nJANIFORM\n\n\nALT + F4"
+    AND SFX \nJANIFORM"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b1166e9ec8adc241b1e1a7162a7d24e, type: 2}
   m_sharedMaterial: {fileID: 5958765254271584162, guid: 8b1166e9ec8adc241b1e1a7162a7d24e,
