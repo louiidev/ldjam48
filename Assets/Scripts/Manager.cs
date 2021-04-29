@@ -5,10 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+public enum GameState
+{
+    HOME, GAMEPLAY, PAUSE
+}
+
 public class Manager : MonoBehaviour
 {
     public AudioController _AudioController;
     public PlayerController player;
+    public GameState currentState;
+    public GameObject gameplayUI;
+    public GameObject pauseMenu;
     public TMP_Text altf4;
     public Image hpBar;
     public Fade _Fade;
@@ -24,22 +32,37 @@ public class Manager : MonoBehaviour
         _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         _AudioController.ChangeMusic(_AudioController.music1);
         _Fade.gameObject.SetActive(true);
-        hpBar.gameObject.transform.parent.gameObject.SetActive(false);
+        gameplayUI.SetActive(false);
         altf4.gameObject.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     private void Update()
     {
-        if (player != null)
+        if (currentState == GameState.HOME)
         {
+            gameplayUI.SetActive(true);
+            altf4.gameObject.SetActive(true);
             UpdateUI();
-            hpBar.gameObject.transform.parent.gameObject.SetActive(true);
-            altf4.gameObject.SetActive(false);
         }
         else
         {
-            hpBar.gameObject.transform.parent.gameObject.SetActive(false);
+            gameplayUI.SetActive(false);
             altf4.gameObject.SetActive(false);
+        }
+
+        if(currentState != GameState.HOME)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(true);
+                currentState = GameState.PAUSE;
+            }
+            else if(Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(false);
+                currentState = GameState.GAMEPLAY;
+            }
         }
     }
 
@@ -75,6 +98,7 @@ public class Manager : MonoBehaviour
         _Fade.FadeIn();
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSeconds(0.4f);
         _Fade.FadeOut();
 
         if(player == null)
@@ -88,6 +112,7 @@ public class Manager : MonoBehaviour
         _Fade.FadeIn();
         yield return new WaitUntil(() => _Fade.isFadeCompleted);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds(0.4f);
         _Fade.FadeOut();
 
         if (player == null)

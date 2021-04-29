@@ -8,6 +8,7 @@ public class MolotovNPC : MonoBehaviour
     public AudioController _AudioController;
     private SpriteRenderer sr;
     private Animator anim;
+    public Color takeDamageColor;
     public GameObject molotovPrefab;
     public GameObject drop;
     public Transform gun;
@@ -26,7 +27,8 @@ public class MolotovNPC : MonoBehaviour
     private bool isAttack;
     private bool isWalk;
     Transform player;
-    Vector2 direction = new Vector2(0,0);
+    Vector2 direction = new Vector2(0, 0);
+    private bool isTakeDamage;
 
     Actor actor;
 
@@ -43,6 +45,7 @@ public class MolotovNPC : MonoBehaviour
     public void Damage()
     {
         health -= 1;
+        if (!isTakeDamage) { StartCoroutine("ChangeColor"); }
         if (health <= 0)
         {
             int rand = Random.Range(0, 100);
@@ -56,6 +59,14 @@ public class MolotovNPC : MonoBehaviour
         }
     }
 
+    IEnumerator ChangeColor()
+    {
+        isTakeDamage = true;
+        sr.color = takeDamageColor;
+        yield return new WaitForSeconds(0.5f);
+        sr.color = Color.white;
+        isTakeDamage = false;
+    }
 
     private void OnDrawGizmos()
     {

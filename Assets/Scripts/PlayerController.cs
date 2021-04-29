@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
     public int heartHp;
     Transform gun;
 
-    new Camera camera;
-
+    private new Camera camera;
     Manager manager;
 
     Actor actor;
@@ -43,9 +42,10 @@ public class PlayerController : MonoBehaviour
         gun = transform.Find("Gun");
         gunController = gun.gameObject.GetComponent<GunController>();
         camera = Camera.main;
-        manager = FindObjectOfType(typeof(Manager)) as Manager;
         actor = GetComponent<Actor>();
+        manager = FindObjectOfType(typeof(Manager)) as Manager;
         manager.player = this;
+        manager.currentState = GameState.GAMEPLAY;
     }
 
     private void Update()
