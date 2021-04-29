@@ -17,6 +17,8 @@ public class Manager : MonoBehaviour
     public GameState currentState;
     public GameObject gameplayUI;
     public GameObject pauseMenu;
+    public Slider musicSlider;
+    public Slider fxSlider;
     public TMP_Text altf4;
     public Image hpBar;
     public Fade _Fade;
@@ -39,26 +41,26 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
-        if (currentState == GameState.HOME)
+        if (currentState == GameState.GAMEPLAY)
         {
             gameplayUI.SetActive(true);
             altf4.gameObject.SetActive(true);
             UpdateUI();
         }
-        else
+        else if(currentState == GameState.HOME)
         {
             gameplayUI.SetActive(false);
             altf4.gameObject.SetActive(false);
         }
 
-        if(currentState != GameState.HOME)
+        if (currentState != GameState.HOME)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeSelf)
             {
                 pauseMenu.SetActive(true);
                 currentState = GameState.PAUSE;
             }
-            else if(Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
+            else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
             {
                 pauseMenu.SetActive(false);
                 currentState = GameState.GAMEPLAY;
@@ -83,6 +85,11 @@ public class Manager : MonoBehaviour
         NextScene();
     }
 
+    public void BackToMainMenu()
+    {
+        StartCoroutine("BackToMenu");
+    }
+
     public void ResetLevel()
     {
         StartCoroutine("DelayResetScene");
@@ -93,6 +100,15 @@ public class Manager : MonoBehaviour
         StartCoroutine("DelayNextScene");
     }
 
+    IEnumerator BackToMenu()
+    {
+        _Fade.FadeIn();
+        yield return new WaitUntil(() => _Fade.isFadeCompleted);
+        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(0.4f);
+        _Fade.FadeOut();
+    }
+
     IEnumerator DelayNextScene()
     {
         _Fade.FadeIn();
@@ -101,7 +117,7 @@ public class Manager : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         _Fade.FadeOut();
 
-        if(player == null)
+        if (player == null)
         {
             player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
         }
@@ -120,4 +136,29 @@ public class Manager : MonoBehaviour
             player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
         }
     }
+
+    #region AUDIO
+    public void UpdateSlider()
+    {
+        musicSlider.value = _AudioController.music.volume;
+        fxSlider.value = _AudioController.fx.volume;
+    }
+
+    public void UpdateVolume()
+    {
+        _AudioController.music.volume = musicSlider.value;
+        _AudioController.fx.volume = fxSlider.value;
+    }
+
+    public void DesativarMusic()
+    {
+        _AudioController.music.mute = !_AudioController.music.mute;
+    }
+
+    public void DesativarFX()
+    {
+        _AudioController.fx.mute = !_AudioController.fx.mute;
+    }
+
+    #endregion
 }
