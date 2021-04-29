@@ -3584,8 +3584,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1474542561}
-        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+      - m_Target: {fileID: 1627837967}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: UpdateVolume
         m_Mode: 1
         m_Arguments:
@@ -3913,8 +3913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f243b378094556f419e96e0d8d347a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSlider: {fileID: 0}
-  fxSlider: {fileID: 0}
+  musicSlider: {fileID: 1659788745}
+  fxSlider: {fileID: 1581284728}
 --- !u!114 &1627837968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4240,8 +4240,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1474542561}
-        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+      - m_Target: {fileID: 1627837967}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: UpdateVolume
         m_Mode: 1
         m_Arguments:
@@ -5263,12 +5263,12 @@ PrefabInstance:
     - target: {fileID: 1004310093378919122, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1004310093378919122, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2207833743658323435, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
@@ -5348,17 +5348,17 @@ PrefabInstance:
     - target: {fileID: 4660866912410090184, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4660866912410090184, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4660866912410090184, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4848170716071727585, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
@@ -5408,26 +5408,31 @@ PrefabInstance:
     - target: {fileID: 7477049225692724252, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 7477049225692724252, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7477049225692724252, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 7496476543026714465, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7496476543026714465, guid: 84216c24fc6e14a40943ebd111e143ea,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917473774167394733, guid: 84216c24fc6e14a40943ebd111e143ea,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8359497841895173885, guid: 84216c24fc6e14a40943ebd111e143ea,

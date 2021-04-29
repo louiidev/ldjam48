@@ -27,6 +27,7 @@ public class Manager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        LoadAudio();
     }
 
     private void Start()
@@ -47,7 +48,7 @@ public class Manager : MonoBehaviour
             altf4.gameObject.SetActive(true);
             UpdateUI();
         }
-        else if(currentState == GameState.HOME)
+        else if (currentState == GameState.HOME)
         {
             gameplayUI.SetActive(false);
             altf4.gameObject.SetActive(false);
@@ -158,6 +159,18 @@ public class Manager : MonoBehaviour
     public void DesativarFX()
     {
         _AudioController.fx.mute = !_AudioController.fx.mute;
+    }
+
+    public void SaveAudio()
+    {
+        PlayerPrefs.SetFloat("music", _AudioController.music.volume);
+        PlayerPrefs.SetFloat("fx", _AudioController.fx.volume);
+    }
+
+    public void LoadAudio()
+    {
+        _AudioController.music.volume = PlayerPrefs.GetFloat("music");
+        _AudioController.fx.volume = PlayerPrefs.GetFloat("fx");
     }
 
     #endregion
