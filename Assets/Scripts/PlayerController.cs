@@ -92,16 +92,37 @@ public class PlayerController : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
-        if(!isRecovery)
+        if (!isRecovery)
         {
             if (mousePos.y > 0)
             {
                 anim.SetLayerWeight(1, 1);
+                anim.SetLayerWeight(2, 0);
+                anim.SetLayerWeight(3, 0);
                 gunSr.sortingOrder = 0;
             }
             else
             {
                 anim.SetLayerWeight(1, 0);
+                anim.SetLayerWeight(2, 0);
+                anim.SetLayerWeight(3, 0);
+                gunSr.sortingOrder = 2;
+            }
+        }
+        else
+        {
+            if (mousePos.y > 0)
+            {
+                anim.SetLayerWeight(1, 0);
+                anim.SetLayerWeight(2, 0);
+                anim.SetLayerWeight(3, 1);
+                gunSr.sortingOrder = 0;
+            }
+            else
+            {
+                anim.SetLayerWeight(1, 0);
+                anim.SetLayerWeight(2, 1);
+                anim.SetLayerWeight(3, 0);
                 gunSr.sortingOrder = 2;
             }
         }
@@ -189,12 +210,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator RecoveryHp()
     {
+        isRecovery = true;
         sr.color = recoveryColor;
         yield return new WaitForSeconds(0.7f);
-        if(!isInFire || !isTakeDamage)
+        if (!isInFire || !isTakeDamage)
         {
             sr.color = Color.white;
         }
+        isRecovery = false;
     }
 
     IEnumerator Fired()
