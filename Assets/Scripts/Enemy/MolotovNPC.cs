@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class MolotovNPC : MonoBehaviour
 {
+    private GameController _GameController;
     public AudioController _AudioController;
     private SpriteRenderer sr;
     private Animator anim;
@@ -34,6 +35,7 @@ public class MolotovNPC : MonoBehaviour
 
     private void Start()
     {
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         actor = GetComponent<Actor>();
         player = FindObjectOfType<PlayerController>().transform;
@@ -104,6 +106,7 @@ public class MolotovNPC : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(_GameController.currentState != GameState.GAMEPLAY) { return; }
         if(!IsInView())
         {
             direction = Vector2.zero;
