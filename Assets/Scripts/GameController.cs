@@ -59,11 +59,13 @@ public class GameController : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 currentState = GameState.PAUSE;
+                SetTime(0);
             }
             else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf)
             {
                 pauseMenu.SetActive(false);
                 currentState = GameState.GAMEPLAY;
+                SetTime(1);
             }
         }
     }
@@ -113,6 +115,21 @@ public class GameController : MonoBehaviour
     public void ChangeFadeColor(Color newColor)
     {
         _Fade.GetComponent<Image>().color = newColor;
+    }
+
+    public void SetTime(int time)
+    {
+        switch (time)
+        {
+            case 0:
+                currentState = GameState.PAUSE;
+                break;
+
+            case 1:
+                currentState = GameState.GAMEPLAY;
+                break;
+        }
+        Time.timeScale = time;
     }
     IEnumerator BackToMenu()
     {

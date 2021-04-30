@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
+    private GameController _GameController;
     AudioController _AudioController;
     [SerializeField]
     GunScriptableObj gun;
@@ -21,14 +22,12 @@ public class GunController : MonoBehaviour
     float shotShakeAmount = 0.2f;
 
     Transform firePoint;
-
-    CameraController cameraController;
-
     SpriteRenderer spriteRenderer;
 
 
     private void Start()
     {
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         if (bulletPrefab == null)
         {
@@ -38,7 +37,6 @@ public class GunController : MonoBehaviour
         spriteRenderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
 
         firePoint = transform.Find("FirePoint");
-        cameraController = Camera.main.GetComponent<CameraController>();
     }
 
 

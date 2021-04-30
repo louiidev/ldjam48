@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     Transform gun;
 
     private new Camera camera;
-    GameController _GameController;
+
+    private GameController _GameController;
 
     Actor actor;
     public GameObject ballPrefab;
@@ -32,12 +33,14 @@ public class PlayerController : MonoBehaviour
     public bool isLookLeft;
 
     private bool isTakeDamage; //if take damage for anything
+    private bool isRecovery;
     private bool isRun;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHp = maxHp;
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -45,13 +48,13 @@ public class PlayerController : MonoBehaviour
         gunController = gun.gameObject.GetComponent<GunController>();
         camera = Camera.main;
         actor = GetComponent<Actor>();
-        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         _GameController.player = this;
         _GameController.currentState = GameState.GAMEPLAY;
     }
 
     private void Update()
     {
+        if(_GameController.currentState != GameState.GAMEPLAY) { return; }
         moveDirection.x = Input.GetAxisRaw("Horizontal");
         moveDirection.y = Input.GetAxisRaw("Vertical");
     }
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (_GameController.currentState != GameState.GAMEPLAY) { return; }
         actor.Move(moveDirection);
         RotateTowardsMouse();
 
@@ -84,16 +88,20 @@ public class PlayerController : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
-        if (mousePos.y > 0)
+        if(!isRecovery)
         {
-            anim.SetLayerWeight(1, 1);
-            gunSr.sortingOrder = 0;
+            if (mousePos.y > 0)
+            {
+                anim.SetLayerWeight(1, 1);
+                gunSr.sortingOrder = 0;
+            }
+            else
+            {
+                anim.SetLayerWeight(1, 0);
+                gunSr.sortingOrder = 2;
+            }
         }
-        else
-        {
-            anim.SetLayerWeight(1, 0);
-            gunSr.sortingOrder = 2;
-        }
+
 
         if (!isLookLeft && mousePos.x < 0)
         {
@@ -110,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartPutFire() //call be damageAreaScript
     {
+        if (_GameController.currentState != GameState.GAMEPLAY) { return; }
         StartCoroutine("PutFire");
     }
 
@@ -136,6 +145,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (_GameController.currentState != GameState.GAMEPLAY) { return; }
         switch (other.gameObject.tag)
         {
             case "Drug":
@@ -194,9 +204,9 @@ public class PlayerController : MonoBehaviour
     {
         if (currentHp <= 0)
         {
-            gameObject.SetActive(false);
-            _AudioController.PlayFX(_AudioController.deathFX);
-            _GameController.ResetLevel();
+            _GameController.currentState = GameState.PAUSE;
+            anim.SetTrigger("die");
+            StartCoroutine("Die");
         }
         else
         {
@@ -204,6 +214,15 @@ public class PlayerController : MonoBehaviour
             _GameController.UpdateUI();
             StartCoroutine("TakeDamage");
         }
+    }
+
+    IEnumerator Die()
+    {
+
+        yield return new WaitForSeconds(2.3f);
+        gameObject.SetActive(false);
+        _AudioController.PlayFX(_AudioController.deathFX);
+        _GameController.ResetLevel();
     }
 
     IEnumerator TakeDamage()
