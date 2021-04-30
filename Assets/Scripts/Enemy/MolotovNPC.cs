@@ -50,7 +50,7 @@ public class MolotovNPC : MonoBehaviour
         {
             int rand = Random.Range(0, 100);
 
-            if (rand > dropPercent)
+            if (rand <= dropPercent)
             {
                 Instantiate(drop, transform.position, Quaternion.identity);
             }
@@ -129,7 +129,10 @@ public class MolotovNPC : MonoBehaviour
             Flip();
         }
 
-        actor.Move(direction);
+        if(direction != Vector2.zero && player != null)
+        {
+            actor.Move(direction);
+        }
 
         gun.right = GetDirectionOfPlayer();
 
@@ -160,7 +163,7 @@ public class MolotovNPC : MonoBehaviour
     IEnumerator DelayFire()
     {
         yield return new WaitForSeconds(delayToFire);
-        GameObject obj = Instantiate(molotovPrefab, gun.position, gun.localRotation);
+        GameObject obj = Instantiate(molotovPrefab, gun.position, gun.rotation);
         obj.GetComponent<Rigidbody2D>().velocity = gun.right * bulletSpeed;
         _AudioController.PlayFX(_AudioController.fireFX2);
     }

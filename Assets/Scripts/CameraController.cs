@@ -26,11 +26,6 @@ public class CameraController : MonoBehaviour
 		startShakeAmount = shakeAmount;
 	}
 
-	void OnEnable()
-	{
-		originalPos = transform.localPosition;
-	}
-
 	public void Shake(float duration)
 	{
 		Shake(duration, startShakeAmount);

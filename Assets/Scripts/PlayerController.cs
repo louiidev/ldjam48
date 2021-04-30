@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -9,14 +10,15 @@ public class PlayerController : MonoBehaviour
     public AudioController _AudioController;
     private Animator anim;
     private SpriteRenderer sr;
+    public SpriteRenderer gunSr;
     Vector3 moveDirection = Vector3.zero;
-    public int maxHp = 50;
-    public int currentHp;
+    public float maxHp = 35;
+    public float currentHp;
     public int heartHp;
     Transform gun;
 
     private new Camera camera;
-    Manager manager;
+    GameController _GameController;
 
     Actor actor;
     public GameObject ballPrefab;
@@ -43,9 +45,9 @@ public class PlayerController : MonoBehaviour
         gunController = gun.gameObject.GetComponent<GunController>();
         camera = Camera.main;
         actor = GetComponent<Actor>();
-        manager = FindObjectOfType(typeof(Manager)) as Manager;
-        manager.player = this;
-        manager.currentState = GameState.GAMEPLAY;
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
+        _GameController.player = this;
+        _GameController.currentState = GameState.GAMEPLAY;
     }
 
     private void Update()
@@ -63,10 +65,6 @@ public class PlayerController : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             isRun = true;
-            if (moveDirection.y != 0)
-            {
-                anim.SetFloat("y", moveDirection.y * -1);
-            }
         }
         else
         {
@@ -86,12 +84,22 @@ public class PlayerController : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
+        if (mousePos.y > 0)
+        {
+            anim.SetLayerWeight(1, 1);
+            gunSr.sortingOrder = 0;
+        }
+        else
+        {
+            anim.SetLayerWeight(1, 0);
+            gunSr.sortingOrder = 2;
+        }
 
         if (!isLookLeft && mousePos.x < 0)
         {
             Flip();
         }
-        else if(isLookLeft && mousePos.x > 0)
+        else if (isLookLeft && mousePos.x > 0)
         {
             Flip();
         }
@@ -107,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayStep()
     {
-        _AudioController.PlayFX(_AudioController.walkFX);
+        _AudioController.PlayFX(_AudioController.RandomWalk());
     }
 
     IEnumerator PutFire()
@@ -131,7 +139,7 @@ public class PlayerController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Drug":
-                manager.OnPickup(other.gameObject);
+                _GameController.OnPickup(other.gameObject);
                 break;
 
             case "Gun":
@@ -146,7 +154,6 @@ public class PlayerController : MonoBehaviour
                 if(currentHp < maxHp)
                 {
                     Recovery(heartHp);
-
                     Destroy(other.gameObject);
                 }
                 break;
@@ -158,10 +165,11 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine("RecoveryHp");
         currentHp += potionHp;
-        if(currentHp >= maxHp)
+        if (currentHp >= maxHp)
         {
             currentHp = maxHp;
         }
+        _GameController.UpdateUI();
     }
 
     IEnumerator RecoveryHp()
@@ -188,11 +196,12 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
             _AudioController.PlayFX(_AudioController.deathFX);
-            manager.ResetLevel();
+            _GameController.ResetLevel();
         }
         else
         {
             currentHp--;
+            _GameController.UpdateUI();
             StartCoroutine("TakeDamage");
         }
     }

@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6497540792417433999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.22, y: 1.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6206478116820761859}
@@ -245,17 +245,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AudioController: {fileID: 0}
+  takeDamageColor: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
   molotovPrefab: {fileID: 8144799802255983399, guid: 5cbd8d3748551e44e8a84ff453951be5,
     type: 3}
   drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}
-  gun: {fileID: 6206478116820761859, guid: dfd6704b85c5809418f687daeb6b720b, type: 3}
+  gun: {fileID: 6206478116820761859}
   health: 5
   attackRange: 5
-  dropPercent: 15
+  dropPercent: 10
   distanceToRun: 2
   distanceView: 6
   bulletSpeed: 6
-  timeToThrow: 4
+  timeToThrow: 7
   delayToFire: 0.2
   isLookLeft: 1
   isReady: 0

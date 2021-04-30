@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float attackRange = 2;
 
-    Manager manager;
+    GameController _GameController;
 
     Transform player;
 
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        manager = FindObjectOfType(typeof(Manager)) as Manager;
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         actor = GetComponent<Actor>();
         player = FindObjectOfType<PlayerController>().transform;
     }
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var direction = manager.drugLevel > 0 && IsInRangeOfPlayer() ? MoveTowardsPlayer() : Vector2.zero;
+        var direction = _GameController.drugLevel > 0 && IsInRangeOfPlayer() ? MoveTowardsPlayer() : Vector2.zero;
         actor.Move(direction);
     }
 

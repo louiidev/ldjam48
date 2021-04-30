@@ -10,7 +10,7 @@ public enum GameState
     HOME, GAMEPLAY, PAUSE
 }
 
-public class Manager : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     public AudioController _AudioController;
     public PlayerController player;
@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         LoadAudio();
     }
 
@@ -36,22 +36,20 @@ public class Manager : MonoBehaviour
         _AudioController.ChangeMusic(_AudioController.music1);
         _Fade.gameObject.SetActive(true);
         gameplayUI.SetActive(false);
+        hpBar.transform.parent.gameObject.SetActive(false);
         altf4.gameObject.SetActive(false);
         pauseMenu.SetActive(false);
     }
 
     private void Update()
     {
-        if (currentState == GameState.GAMEPLAY)
+        if (currentState == GameState.GAMEPLAY && !gameplayUI.activeSelf)
         {
-            gameplayUI.SetActive(true);
-            altf4.gameObject.SetActive(true);
-            UpdateUI();
+            SetUIGameplay(true);
         }
-        else if (currentState == GameState.HOME)
+        else if (currentState == GameState.HOME && gameplayUI.activeSelf)
         {
-            gameplayUI.SetActive(false);
-            altf4.gameObject.SetActive(false);
+            SetUIGameplay(false);
         }
 
         if (currentState != GameState.HOME)
@@ -69,9 +67,16 @@ public class Manager : MonoBehaviour
         }
     }
 
-    void UpdateUI()
+    void SetUIGameplay(bool isActive)
     {
-        hpBar.fillAmount = player.currentHp / player.maxHp;
+        gameplayUI.SetActive(isActive);
+        hpBar.transform.parent.gameObject.SetActive(isActive);
+        altf4.gameObject.SetActive(isActive);
+    }
+
+    public void UpdateUI()
+    {
+        hpBar.fillAmount = (float)player.currentHp / (float)player.maxHp;
     }
 
     public void OnPickup(GameObject item)

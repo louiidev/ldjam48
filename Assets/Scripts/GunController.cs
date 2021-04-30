@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-
+    AudioController _AudioController;
     [SerializeField]
     GunScriptableObj gun;
 
@@ -29,6 +29,7 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
+        _AudioController = FindObjectOfType(typeof(AudioController)) as AudioController;
         if (bulletPrefab == null)
         {
             bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
@@ -50,9 +51,10 @@ public class GunController : MonoBehaviour
 
             rot *= Quaternion.Euler(0, 0, Random.Range(-shotRotationRandomness, shotRotationRandomness));
             var bullet = Instantiate(bulletPrefab, firePoint.position, rot);
+            _AudioController.PlayFX(_AudioController.fireFX);
             // for push back effect, ignoring bullet randomness
             bullet.GetComponent<Bullet>().bulletDirection = transform.up;
-            cameraController.Shake(0.2f);
+            //cameraController.Shake(0.2f);
         }
 
         var rotation = transform.rotation.eulerAngles.z;

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4517779042287032447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0.79, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4517779042802690934}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AudioController: {fileID: 0}
-  enemyRoom: {fileID: 0}
+  takeDamageColor: {r: 1, g: 0.504717, b: 0.504717, a: 1}
   molotovPrefab: {fileID: 4944987758262133997, guid: de8d6d5430d6ea44886be2405bcf482d,
     type: 3}
   drop: {fileID: 4890747778418944851, guid: aab10413afb72df4a9c023ce27683378, type: 3}

@@ -20,14 +20,13 @@ public class Actor : MonoBehaviour
     float currentKnockbackTimer = 0;
 
     Vector2 knockbackDirection = Vector2.zero;
-
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D _rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.gravityScale = 0;
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody2D.gravityScale = 0;
     }
 
     private void Update()
@@ -42,11 +41,11 @@ public class Actor : MonoBehaviour
     {
         if (currentKnockbackTimer <= 0)
         {
-            rigidbody2D.velocity = direction.normalized * speed;
+            _rigidbody2D.velocity = direction.normalized * speed;
         } 
         else
         {
-            rigidbody2D.velocity = knockbackDirection * knockBackForce;
+            _rigidbody2D.velocity = knockbackDirection * knockBackForce;
         }
     }
 

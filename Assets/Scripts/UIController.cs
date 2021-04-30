@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    Manager manager;
+    GameController _GameController;
     // Start is called before the first frame update
     void Start()
     {
-        manager = FindObjectOfType(typeof(Manager)) as Manager;
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
     }
 }

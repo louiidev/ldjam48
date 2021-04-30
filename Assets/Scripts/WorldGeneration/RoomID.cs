@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomID : MonoBehaviour
 {
-    private Manager _Manager;
+    private GameController _GameController;
     public int chestRoomPercent = 0;
     public int quantityEnemies = 5;
     public int maxQuantity = 20;
@@ -18,8 +18,8 @@ public class RoomID : MonoBehaviour
 
     private void Start()
     {
-        _Manager = FindObjectOfType(typeof(Manager)) as Manager;
-        int druglevel = _Manager.drugLevel;
+        _GameController = FindObjectOfType(typeof(GameController)) as GameController;
+        int druglevel = _GameController.drugLevel;
 
         if (druglevel > 0)
         {
