@@ -45,6 +45,7 @@ public class MolotovNPC : MonoBehaviour
     public void Damage()
     {
         health -= 1;
+
         if (!isTakeDamage) { StartCoroutine("ChangeColor"); }
         if (health <= 0)
         {

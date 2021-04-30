@@ -19,11 +19,13 @@ public class Fade : MonoBehaviour
 
     public void FadeIn()
     {
+        isFadeCompleted = false;
         anim.SetTrigger("fadeIn");
     }
 
     public void FadeOut()
     {
+        isFadeCompleted = false;
         anim.SetTrigger("fadeOut");
     }
 }
