@@ -211,7 +211,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator RecoveryHp()
     {
         isRecovery = true;
-        sr.color = recoveryColor;
         yield return new WaitForSeconds(0.7f);
         if (!isInFire || !isTakeDamage)
         {

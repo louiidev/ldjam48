@@ -58,8 +58,20 @@ public class MolotovNPC : MonoBehaviour
                 Instantiate(drop, transform.position, Quaternion.identity);
             }
 
-            Destroy(this.gameObject);
+            StartCoroutine("DelayDie");
         }
+    }
+
+    IEnumerator DelayDie()
+    {
+        if (anim != null)
+        {
+            anim.SetTrigger("die");
+        }
+
+        GetComponent<BoxCollider2D>().isTrigger = true;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
     }
 
     IEnumerator ChangeColor()
