@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 [RequireComponent(typeof(Actor))]
 public class PlayerController : MonoBehaviour
 {
     public AudioController _AudioController;
+    public Volume damageVolume;
     private Animator anim;
     private SpriteRenderer sr;
     public SpriteRenderer gunSr;
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
         Vector3 posCam = new Vector3(transform.position.x, transform.position.y, -10);
         camera.transform.position = posCam;
         anim.SetBool("isRun", isRun);
+
+        damageVolume.weight = currentHp / maxHp;
     }
 
     void RotateTowardsMouse()
@@ -149,6 +153,7 @@ public class PlayerController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Drug":
+                _AudioController.PlayFX(_AudioController.pickupItemFX);
                 _GameController.OnPickup(other.gameObject);
                 break;
 

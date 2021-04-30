@@ -108,6 +108,8 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
+        player.currentHp = player.maxHp;
+        UpdateUI();
         ChangeFadeColor(Color.white);
         StartCoroutine("DelayNextScene");
     }
