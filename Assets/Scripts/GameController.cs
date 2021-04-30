@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
         LoadAudio();
     }
 
@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour
         hpBar.transform.parent.gameObject.SetActive(false);
         altf4.gameObject.SetActive(false);
         pauseMenu.SetActive(false);
+        ChangeFadeColor(Color.black);
     }
 
     private void Update()
@@ -93,19 +94,26 @@ public class GameController : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        ChangeFadeColor(Color.black);
         StartCoroutine("BackToMenu");
     }
 
     public void ResetLevel()
     {
+        ChangeFadeColor(Color.white);
         StartCoroutine("DelayResetScene");
     }
 
     public void NextScene()
     {
+        ChangeFadeColor(Color.white);
         StartCoroutine("DelayNextScene");
     }
 
+    public void ChangeFadeColor(Color newColor)
+    {
+        _Fade.GetComponent<Image>().color = newColor;
+    }
     IEnumerator BackToMenu()
     {
         _Fade.FadeIn();
